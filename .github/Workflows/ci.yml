@@ -1,0 +1,66 @@
+name: Portfolio CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  portfolio:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpass
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U testuser"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # 3. Install backend dependencies
+      - name: Install backend dependencies
+        working-directory: ./backend
+        run: npm install
+
+      # 4. Lint frontend JavaScript 
+      - name: Lint frontend JS
+        run: |
+          npm install -g eslint
+          npx eslint ./ --ext .js || true
+
+      # 5. Test backend server
+      - name: Test backend server
+        working-directory: ./backend
+        env:
+          DATABASE_URL: postgres://testuser:testpass@localhost:5432/testdb
+          PORT: 5000
+        run: |
+          node server.js &
+          sleep 5
+          curl -f http://localhost:5000/health
+
+      # 6. Optional: Deploy frontend to GitHub Pages
+      - name: Deploy Frontend to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./   # folder containing index.html
