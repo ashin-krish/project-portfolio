@@ -1,104 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ashin Krishna | MEAN Stack Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashin Krishna — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <h2 class="logo">ASHIN.Dev</h2>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero glass">
-    <h1>Hey, I'm <span>Ashin Krishna</span></h1>
-    <p>Full-Stack Developer | MEAN Stack Enthusiast</p>
-    <a href="#projects" class="btn">View Projects</a>
-  </section>
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="nav-logo">Ashin<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="Ashin_Krishna_CV.pdf" download class="nav-cv">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+      <path d="M6.5 1v8M3 6.5l3.5 3.5L10 6.5M2 11h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Download CV
+  </a>
+</nav>
 
-  <!-- About -->
-  <section id="about" class="section glass">
-    <h2>About Me</h2>
-    <p>
-      I am a passionate MEAN Stack developer exploring Angular, Node.js, Express, and MongoDB.
-      I build sleek, modern web applications with a focus on functionality and user experience.
-    </p>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="section glass">
-    <h2>Skills</h2>
-    <div class="skill-grid">
-      <div class="skill">HTML5</div>
-      <div class="skill">CSS3</div>
-      <div class="skill">JavaScript (ES6+)</div>
-      <div class="skill">TypeScript</div>
-      <div class="skill">Angular</div>
-      <div class="skill">Node.js</div>
-      <div class="skill">Express.js</div>
-      <div class="skill">MongoDB</div>
-      <div class="skill">REST APIs</div>
-      <div class="skill">PostgreSQL</div>
-      <div class="skill">Git & GitHub</div>
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="line"></span>
+      <span>Available for opportunities</span>
     </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section glass">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Blog Management Platform</h3>
-        <p>
-          A blogging platform with Angular frontend, Node.js & Express backend, and MongoDB database.
-          Features user authentication and rich text editor.
-        </p>
+    <h1>
+      <span class="first">Ashin</span>
+      <span class="last">Krishna</span>
+    </h1>
+    <p class="hero-title">Full Stack Developer</p>
+    <p>I build purposeful digital products — clean, scalable backends paired with interfaces people actually enjoy using. Let's make something great together.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-dark">View My Work →</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-wrap">
+  
+   <img
+  src="assets/profile.jpg"
+  alt="Ashin Krishna"
+  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+/>
+      <div class="photo-placeholder" style="display:none;">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <circle cx="28" cy="21" r="11" stroke="#a09890" stroke-width="2"/>
+          <path d="M8 47c0-11 9-19 20-19s20 8 20 19" stroke="#a09890" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span></span>
       </div>
-      <div class="project-card">
-        <h3>Movie Recommendation App</h3>
-        <p>
-          Search, view, and save movies. Angular frontend, Node.js backend, MongoDB database.
-          Integrates TMDb/OMDb API for live movie data.
-        </p>
-      </div>
-      <div class="project-card">
-        <h3>Event Booking System</h3>
-        <p>
-          Book seats for workshops or concerts. Angular + Node.js + Express + MongoDB.
-          Includes event listings and admin panel.
-        </p>
+      <div class="avail-badge">
+        <div class="avail-dot"></div>
+        <span>Open to work</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="section glass">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p id="msg"></p>
-  </section>
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="reveal">
+    <div class="s-tag">Who I am</div>
+    <h2 class="s-title">About Me</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <span class="highlight-line">"Code is craft. I take that seriously."</span>
+      <p>Hi, I'm Ashin — a developer who genuinely cares about the work. I love solving real problems with clean code and thoughtful design, and I believe the best software comes from deeply understanding the people who use it.</p>
+      <p>I work across the full stack, from architecting databases and REST APIs to building interfaces that feel intuitive and fast. I'm comfortable with ambiguity, quick to learn, and collaborative by nature.</p>
+      <p>When I'm not building things, I'm exploring new technologies, contributing to side projects, or thinking about what to build next.</p>
+      <a href="#contact" class="btn btn-dark" style="margin-top:.5rem; display:inline-flex;">Let's Talk →</a>
+    </div>
+    <div class="stat-grid reveal">
+      <div class="stat-box"><div class="n">20<span>+</span></div><div class="l">Projects shipped</div></div>
+      <div class="stat-box"><div class="n">3<span>+</span></div><div class="l">Years experience</div></div>
+      <div class="stat-box"><div class="n">10<span>+</span></div><div class="l">Technologies</div></div>
+      <div class="stat-box"><div class="n">∞</div><div class="l">Cups of coffee</div></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="glass">
-    <p>© 2026 Ashin Krishna</p>
-  </footer>
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="skills-top reveal">
+    <div>
+      <div class="s-tag">What I work with</div>
+      <h2 class="s-title">Skills & Tools</h2>
+    </div>
+    <p class="s-sub">A toolkit built across frontend, backend, databases, and dev ops — always growing.</p>
+  </div>
+  <div class="skills-grid reveal">
+    <div class="skill-chip"><span class="dot"></span>JavaScript</div>
+    <div class="skill-chip"><span class="dot"></span>TypeScript</div>
+    <div class="skill-chip"><span class="dot"></span>React.js</div>
+    <div class="skill-chip"><span class="dot"></span>Node.js</div>
+    <div class="skill-chip"><span class="dot"></span>Express.js</div>
+    <div class="skill-chip"><span class="dot"></span>PostgreSQL</div>
+    <div class="skill-chip"><span class="dot"></span>MongoDB</div>
+    <div class="skill-chip"><span class="dot"></span>REST APIs</div>
+    <div class="skill-chip"><span class="dot"></span>HTML & CSS</div>
+    <div class="skill-chip"><span class="dot"></span>Git & GitHub</div>
+    <div class="skill-chip"><span class="dot"></span>Docker</div>
+    <div class="skill-chip"><span class="dot"></span>Figma</div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="projects-top reveal">
+    <div>
+      <div class="s-tag">What I've built</div>
+      <h2 class="s-title">Selected Projects</h2>
+    </div>
+  </div>
+
+  <div class="projects-grid reveal">
+
+    <!-- Project 1 -->
+    <div class="p-card">
+      <div class="p-thumb">🎓<div class="shine"></div></div>
+      <div class="p-body">
+        <div class="p-tag">Full Stack</div>
+        <h3>Student Feedback Web Application</h3>
+        <p>
+          A full-stack web application that allows students to submit course and faculty feedback easily.
+          It includes secure form handling, database storage, and an organized admin-side structure for
+          managing submitted responses.
+        </p>
+        <div class="p-links">
+          <a href="#" class="p-link" target="_blank">↗ Live Demo</a>
+          <a href="#" class="p-link" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="p-card">
+      <div class="p-thumb">💼<div class="shine"></div></div>
+      <div class="p-body">
+        <div class="p-tag">Frontend</div>
+        <h3>Personal Portfolio Website</h3>
+        <p>
+          A responsive and modern portfolio website built to showcase my skills, projects, resume,
+          and contact details. Designed with smooth animations, clean UI, and a professional layout
+          for recruiters and clients.
+        </p>
+        <div class="p-links">
+          <a href="#" class="p-link" target="_blank">↗ Live Demo</a>
+          <a href="#" class="p-link" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="p-card">
+      <div class="p-thumb">📩<div class="shine"></div></div>
+      <div class="p-body">
+        <div class="p-tag">Backend</div>
+        <h3>Contact Form Backend System</h3>
+        <p>
+          A backend-powered contact form system using Node.js, Express, and PostgreSQL to receive,
+          store, and manage user messages from a portfolio website. Built with proper API handling
+          and database integration.
+        </p>
+        <div class="p-links">
+          <a href="#" class="p-link" target="_blank">↗ Live Demo</a>
+          <a href="#" class="p-link" target="_blank">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── RESUME ── -->
+<section id="resume">
+  <div class="resume-inner reveal">
+    <div class="s-tag">My Resume</div>
+    <h2 class="s-title">Download My CV</h2>
+    <p>A full overview of my experience, education, and the projects I've contributed to. Available as a PDF — feel free to keep it.</p>
+    <a href="Ashin_Krishna_CV.pdf" download class="resume-btn">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M9 2v10M5 9l4 4 4-4M3 15h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Download CV — PDF
+    </a>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="reveal">
+    <div class="s-tag">Get in touch</div>
+    <h2 class="s-title">Let's Work Together</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-lhs reveal">
+      <h3>I'd love to hear from you.</h3>
+      <p>Whether you have a project in mind, a question, or just want to say hello — drop me a message and I'll get back to you soon.</p>
+      <div class="c-detail"><span class="c-icon">✉️</span><span>ash@email.com</span></div>
+      <div class="c-detail"><span class="c-icon">📍</span><span>kerala kozikode, India</span></div>
+      <div class="c-detail"><span class="c-icon">💼</span><span>www.linkedin.com/in/
+ashin-krishna-2a873b3a9
+</span></div>
+      <div class="c-detail"><span class="c-icon">🐙</span><span>https://github.com/ashin-krish</span></div>
+    </div>
+    <div class="reveal">
+      <form id="contactForm" class="contact-form">
+        <div class="f-row">
+          <div class="f-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name" autocomplete="off" />
+          </div>
+          <div class="f-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com" autocomplete="off" />
+          </div>
+        </div>
+        <div class="f-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell me about your project or just say hi..."></textarea>
+        </div>
+        <div id="msg"></div>
+        <button type="submit" class="btn-send">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="foot-logo">Ashin<span>.</span></span>
+  <p>© 2025 Ashin Krishna. All rights reserved.</p>
+  <div class="foot-socials">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Twitter</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
