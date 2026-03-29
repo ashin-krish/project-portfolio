@@ -19,7 +19,7 @@ form.addEventListener("submit", async (e) => {
   btn.textContent = "Sending…";
 
   try {
-    const res = await fetch("https://project-portfolio-qxyl.onrender.com/", {
+    const res = await fetch("https://project-portfolio-qxyl.onrender.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, message })
